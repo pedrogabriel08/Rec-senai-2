@@ -3,10 +3,11 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public string objectName;
-    public InteractionType interactionType;
+    [SerializeField] private string taskID;
+    [SerializeField] private string interactionText;
 
     public void Interact()
     {
-        Debug.Log("Interagiu com: " + objectName + " (Tipo: " + interactionType + ")");
+        Debug.Log("Interagiu com: " + objectName + " (Tipo: " + interactionText + ")");
     }
 }
