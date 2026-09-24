@@ -38,6 +38,7 @@ public class TaskManager : MonoBehaviour
             task.Complete();
 
             Debug.Log($"Task concluída: {task.Title}");
+            Debug.Log($"Estado: {task.IsCompleted}");
         }
     }
 
@@ -62,4 +63,6 @@ public class TaskManager : MonoBehaviour
     {
         tasks.Clear();
     }
+
+ 
 }

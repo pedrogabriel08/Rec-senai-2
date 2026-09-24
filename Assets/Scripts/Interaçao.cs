@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class Interaçao : MonoBehaviour
 {
-    [SerializeField] private string taskID;
-
-    [SerializeField] private string interactionText;
+    private string taskID;
+    private string interactionText;
 
     public string InteractionText => interactionText;
+
+    public void SetTaskData(string id, string text)
+    {
+        taskID = id;
+        interactionText = text;
+    }
 
     public void Interact()
     {

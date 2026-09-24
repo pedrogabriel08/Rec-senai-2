@@ -21,6 +21,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
         {
+            // INTERAÇÕES DE TAREFA
             Interaçao interactable =
                 hit.collider.GetComponent<Interaçao>();
 
@@ -36,6 +37,28 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     interactable.Interact();
                 }
+
+                return;
+            }
+
+            // INTERAÇÃO DA CAMA
+            BedInteraction bed =
+                hit.collider.GetComponent<BedInteraction>();
+
+            if (bed != null)
+            {
+                if (interactionText != null)
+                {
+                    interactionText.text =
+                        "[E] Dormir";
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    bed.Interact();
+                }
+
+                return;
             }
         }
     }
